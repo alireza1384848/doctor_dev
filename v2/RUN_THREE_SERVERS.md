@@ -19,10 +19,10 @@ Edit these files on the matching servers:
 Replace:
 
 ```text
-91.107.149.134
-zayflow.com
+FORIGEN_NODE_PUBLIC_IP_OR_DNS
+GATEWAY_NODE_PUBLIC_IP_OR_DNS
 IRAN_NODE_PUBLIC_IP_OR_DNS
-admin123
+CHANGE_ME_SECRET_TOKEN
 ```
 
 Use the same token wherever one manager calls another manager, or use different tokens and configure them correctly.
@@ -65,16 +65,13 @@ On Forigen-Node:
 ```bash
 source .venv/bin/activate
 ./scripts/run-forigen-node.sh
-
-nohup ./scripts/run-forigen-node.sh > forigen-node.out 2>&1 &
-echo $! > forigen-node.pid
 ```
 
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 inbounds Forigen-Node-Group-1
+doctor-devctl --manager http://127.0.0.1:7003 --token CHANGE_ME_SECRET_TOKEN status
+doctor-devctl --manager http://127.0.0.1:7003 --token CHANGE_ME_SECRET_TOKEN inbounds Forigen-Node-Group-1
 ```
 
 Forigen groups:
@@ -93,22 +90,19 @@ On Gateway-Node:
 ```bash
 source .venv/bin/activate
 ./scripts/run-gateway-node.sh
-
-nohup ./scripts/run-gateway-node.sh > gateway-node.out 2>&1 &
-echo $! > gateway-node.pid
 ```
 
 Force sync once:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:7002 --token admin123 sync
+doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN sync
 ```
 
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:7002 --token admin123 status
-doctor-devctl --manager http://127.0.0.1:7002 --token admin123 inbounds Gateway-Node-Group-1
+doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN status
+doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN inbounds Gateway-Node-Group-1
 ```
 
 Gateway groups:
@@ -127,22 +121,19 @@ On Iran-Node:
 ```bash
 source .venv/bin/activate
 ./scripts/run-iran-node.sh
-
-nohup ./scripts/run-iran-node.sh > iran-node.out 2>&1 &
-echo $! > iran-node.pid
 ```
 
 Force sync once:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:7001 --token admin123 sync
+doctor-devctl --manager http://127.0.0.1:7001 --token CHANGE_ME_SECRET_TOKEN sync
 ```
 
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:7001 --token admin123 status
-doctor-devctl --manager http://127.0.0.1:7001 --token admin123 inbounds Iran-Node-Group-1
+doctor-devctl --manager http://127.0.0.1:7001 --token CHANGE_ME_SECRET_TOKEN status
+doctor-devctl --manager http://127.0.0.1:7001 --token CHANGE_ME_SECRET_TOKEN inbounds Iran-Node-Group-1
 ```
 
 Iran groups:
@@ -187,7 +178,7 @@ while true; do nc -l -p 9999 -c 'cat'; done
 Then on a client that can reach Iran-Node, get the sub group inbound:
 
 ```bash
-doctor-devctl --manager http://IRAN_NODE_PUBLIC_IP_OR_DNS:7001 --token admin123 inbounds Iran-Node-Group-Sub
+doctor-devctl --manager http://IRAN_NODE_PUBLIC_IP_OR_DNS:7001 --token CHANGE_ME_SECRET_TOKEN inbounds Iran-Node-Group-Sub
 ```
 
 Connect to the returned Iran inbound port:
@@ -210,17 +201,3 @@ client -> Iran-Node-Group-Sub -> Gateway-Node-Group-Sub -> Forigen-Node-Group-Su
 - Consider fixed ports or a limited port range instead of fully random ports.
 - Run with systemd or Docker.
 - Monitor logs under `./logs/`.
-
-
-
-ps aux | grep doctor-dev
-
-
-tail -f forigen-node.out
-tail -f gateway-node.out
-tail -f iran-node.out
-
-
-kill $(cat forigen-node.pid)
-kill $(cat gateway-node.pid)
-kill $(cat iran-node.pid)
