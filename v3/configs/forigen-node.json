@@ -3,7 +3,7 @@
     "name": "Forigen-Node",
     "host": "0.0.0.0",
     "port": 17002,
-    "public_host": "91.107.149.134",
+    "public_host": "91.107.245.106",
     "api_token": "admin123",
     "log_file": "./logs/forigen-node.log"
   },

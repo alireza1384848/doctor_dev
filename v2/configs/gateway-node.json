@@ -48,28 +48,28 @@
   "remote_dependencies": [
     {
       "name": "Forigen-Node-Group-1",
-      "manager_url": "http://91.107.149.134:17002",
+      "manager_url": "http://91.107.245.106:17002",
       "group_name": "Forigen-Node-Group-1",
       "token": "admin123",
       "sync_interval_seconds": 5
     },
     {
       "name": "Forigen-Node-Group-2",
-      "manager_url": "http://91.107.149.134:17002",
+      "manager_url": "http://91.107.245.106:17002",
       "group_name": "Forigen-Node-Group-2",
       "token": "admin123",
       "sync_interval_seconds": 5
     },
     {
       "name": "Forigen-Node-Group-3",
-      "manager_url": "http://91.107.149.134:17002",
+      "manager_url": "http://91.107.245.106:17002",
       "group_name": "Forigen-Node-Group-3",
       "token": "admin123",
       "sync_interval_seconds": 5
     },
     {
       "name": "Forigen-Node-Group-Sub",
-      "manager_url": "http://91.107.149.134:17002",
+      "manager_url": "http://91.107.245.106:17002",
       "group_name": "Forigen-Node-Group-Sub",
       "token": "admin123",
       "sync_interval_seconds": 5
