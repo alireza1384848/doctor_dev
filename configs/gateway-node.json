@@ -10,14 +10,21 @@
   "groups": [
     {
       "name": "Gateway-Node-Group-1",
-      "process_count": 1,
+      "process_count": 4,
       "listen_host": "0.0.0.0",
       "port_mode": "random",
-      "targets": [{"type": "static", "host": "127.0.0.1", "port": 29681}],
+      "targets": [{"type": "remote_group", "dependency": "Forigen-Node-Group-1"}],
       "strategy": "round_robin",
       "enabled": true
     }
   ],
   "remote_dependencies": [
+    {
+      "name": "Forigen-Node-Group-1",
+      "manager_url": "http://217.60.5.168:17002",
+      "group_name": "Forigen-Node-Group-1",
+      "token": "admin123",
+      "sync_interval_seconds": 5
+    }
   ]
 }
