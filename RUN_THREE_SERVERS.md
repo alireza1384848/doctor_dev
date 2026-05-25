@@ -54,7 +54,7 @@ Forigen-Node -> 127.0.0.1:10000, 10001, 10002, 9999
 unzip doctor_dev.zip
 cd doctor_dev
 python3 -m venv .venv
-source .venv/bin/activate
+    source .venv/bin/activate
 pip install -e .
 ```
 
@@ -70,7 +70,7 @@ source .venv/bin/activate
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
+doctor-devctl --manager http://zayflow.com:17002 --token admin123 status
 doctor-devctl --manager http://127.0.0.1:17002 --token admin123 inbounds Forigen-Node-Group-1
 ```
 
@@ -101,7 +101,7 @@ doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN syn
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN status
+doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
 doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN inbounds Gateway-Node-Group-1
 ```
 
