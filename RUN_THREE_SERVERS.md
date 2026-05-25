@@ -70,8 +70,8 @@ source .venv/bin/activate
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 inbounds Forigen-Node-Group-1
+doctor-devctl --manager http://127.0.0.1:17002 --token yaNtOybPhroLdMnuRi0Dg8yE status
+doctor-devctl --manager http://127.0.0.1:17002 --token yaNtOybPhroLdMnuRi0Dg8yE inbounds Forigen-Node-Group-1
 ```
 
 Forigen groups:
@@ -101,7 +101,7 @@ doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN syn
 Check:
 
 ```bash
-doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
+doctor-devctl --manager http://127.0.0.1:17002 --token yaNtOybPhroLdMnuRi0Dg8yE status
 doctor-devctl --manager http://127.0.0.1:7002 --token CHANGE_ME_SECRET_TOKEN inbounds Gateway-Node-Group-1
 ```
 
