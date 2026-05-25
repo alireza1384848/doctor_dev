@@ -70,7 +70,7 @@ source .venv/bin/activate
 Check:
 
 ```bash
-doctor-devctl --manager http://zayflow.com:17002 --token admin123 status
+doctor-devctl --manager http://127.0.0.1:17002 --token admin123 status
 doctor-devctl --manager http://127.0.0.1:17002 --token admin123 inbounds Forigen-Node-Group-1
 ```
 

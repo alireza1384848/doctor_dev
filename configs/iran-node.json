@@ -10,13 +10,21 @@
   "groups": [
     {
       "name": "Iran-Node-Group-1",
-      "process_count": 1,
+      "process_count": 3,
       "listen_host": "0.0.0.0",
       "port_mode": "random",
-      "targets": [{"type": "static", "host": "zayflow.com", "port": 29681}],
+      "targets": [{"type": "remote_group", "dependency": "Gateway-Node-Group-1"}],
       "strategy": "round_robin",
       "enabled": true
     }
   ],
-  "remote_dependencies": []
+  "remote_dependencies": [
+    {
+      "name": "Gateway-Node-Group-1",
+      "manager_url": "http://zayflow.com:17002",
+      "group_name": "Gateway-Node-Group-1",
+      "token": "admin123",
+      "sync_interval_seconds": 5
+    }
+  ]
 }
