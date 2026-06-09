@@ -2,9 +2,14 @@
 set -euo pipefail
 
 NODE_NAME="second-000-node"
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 cd "$PROJECT_DIR"
-mkdir -p logs run
+
+mkdir -p configs logs run
+
+cp "DocNodes/$NODE_NAME/configs/$NODE_NAME.json" "configs/doctor_dev.json"
+
 ENV_FILE="DocNodes/$NODE_NAME/configs/$NODE_NAME.env"
 PID_FILE="run/${NODE_NAME}.pid"
 LOG_FILE="logs/${NODE_NAME}.out"
