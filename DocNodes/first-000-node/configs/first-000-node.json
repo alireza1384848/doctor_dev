@@ -14,8 +14,7 @@
       "listen_host": "0.0.0.0",
       "port_mode": "fixed",
       "fixed_ports": [1000,1001,1002,1003,1004,1005],
-      "targets": [{"type": "remote_group", "dependency": "freedom-000-node-group-1"},
-                  {"type": "remote_group", "dependency": "second-000-node-group-1"}],
+      "targets": [{"type": "remote_group", "dependency": "second-000-node-group-1"}],
       "strategy": "round_robin",
       "enabled": true
     },  
@@ -25,8 +24,7 @@
       "listen_host": "0.0.0.0",
       "port_mode": "fixed",
       "fixed_ports": [1006,1007,1008],
-      "targets": [{"type": "remote_group", "dependency": "freedom-000-node-group-2"},
-                  {"type": "remote_group", "dependency": "second-000-node-group-2"}],
+      "targets": [{"type": "remote_group", "dependency": "second-000-node-group-2"}],
       "strategy": "round_robin",
       "enabled": true
     },  
@@ -42,20 +40,6 @@
     }
   ],
   "remote_dependencies": [
-    {
-      "name": "freedom-000-node-group-1",
-      "manager_url": "http://docnode.pangshanbebazar.ir:17002",
-      "group_name": "freedom-000-node-group-1",
-      "token": "yaNtOybPhroLdMnuRi0Dg8yE",
-      "sync_interval_seconds": 5
-    },
-    {
-      "name": "freedom-000-node-group-2",
-      "manager_url": "http://docnode.pangshanbebazar.ir:17002",
-      "group_name": "freedom-000-node-group-2",
-      "token": "yaNtOybPhroLdMnuRi0Dg8yE",
-      "sync_interval_seconds": 5
-    },
     {
       "name": "freedom-000-node-group-3",
       "manager_url": "http://docnode.pangshanbebazar.ir:17002",
